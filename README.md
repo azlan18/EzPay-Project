@@ -5,7 +5,7 @@
 ![image](https://github.com/user-attachments/assets/cb99ada4-de33-4845-9844-27194fb2e622)
 
 ## Setup
-Step 1 Clone the repo
+## Step 1 Clone the repo
 
 ```
 cd EzPay-Project/backend
@@ -17,11 +17,24 @@ cd ../frontend
 npm i
 ```
 
-Step 2 Add your mongodb string at /backend/.env
-Step 3 Add your own JWT_SECRET at /backend/config.js
-Step 4 Start the backend server
+## Step 2 Add your mongodb string at
+```
+/backend/.env
+```
+
+## Step 3 Add your own JWT_SECRET at 
+```
+/backend/config.js
+```
+
+## Step 4 Start the backend server
+```
 cd backend
 node index.js
-Step 5 Start the client server
+```
+
+## Step 5 Start the client server
+```
 cd ../frontend 
 npm run dev
+```
