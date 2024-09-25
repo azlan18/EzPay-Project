@@ -6,10 +6,17 @@
 
 ## Setup
 Step 1 Clone the repo
+
+```
 cd EzPay-Project/backend
+```
+
+```
 npm i
 cd ../frontend
 npm i
+```
+
 Step 2 Add your mongodb string at /backend/.env
 Step 3 Add your own JWT_SECRET at /backend/config.js
 Step 4 Start the backend server
