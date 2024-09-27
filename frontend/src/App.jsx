@@ -9,6 +9,8 @@ import { Signin } from "./pages/Signin";
 import { Dashboard } from "./pages/Dashboard";
 import { SendMoney } from "./pages/SendMoney";
 
+import { UpdateInfo } from "./pages/UpdateInfo";
+
 function App() {
   const token = localStorage.getItem("token"); // Get the JWT token from local storage
 
@@ -20,6 +22,7 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/send" element={<SendMoney />} />
+        <Route path="/update" element={token ? <UpdateInfo/>: <Navigate to="/signin"/>} />
       </Routes>
     </BrowserRouter>
   );

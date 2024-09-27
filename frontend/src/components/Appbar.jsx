@@ -7,13 +7,21 @@ export const Appbar = () => {
         localStorage.removeItem("token"); // Remove the token from local storage
         navigate("/signin"); // Redirect to the sign-in page
     };
-
+    const handleUpdate = ()=>{
+        const token = localStorage.getItem('token')
+        if(token){
+            navigate("/update")
+        }
+        else{
+            navigate("/signin")
+        }
+    }
     return (
         <div className="shadow h-14 flex justify-between">
             <div className="flex flex-col justify-center h-full ml-4">
                 PayTM App
             </div>
-            <div className="flex">
+            <div className="flex mr-4">
                 <div className="flex flex-col justify-center h-full mr-4">
                     Hello
                 </div>
@@ -24,8 +32,13 @@ export const Appbar = () => {
                 </div>
                 <button 
                     onClick={handleLogout} 
-                    className="self-center bg-red-500 text-white px-4 py-1 rounded-md">
+                    className="self-center bg-red-700 text-white px-4 py-1 mr-2 rounded-md">
                     Logout
+                </button>
+                <button 
+                    onClick={handleUpdate} 
+                    className="self-center bg-slate-950 text-white px-4 py-1 rounded-md">
+                    Update Info
                 </button>
             </div>
         </div>
