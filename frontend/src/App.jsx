@@ -8,7 +8,7 @@ import { Signup } from "./pages/Signup";
 import { Signin } from "./pages/Signin";
 import { Dashboard } from "./pages/Dashboard";
 import { SendMoney } from "./pages/SendMoney";
-
+import { Transactions } from "./pages/Transactions";
 import { UpdateInfo } from "./pages/UpdateInfo";
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/send" element={<SendMoney />} />
         <Route path="/update" element={token ? <UpdateInfo/>: <Navigate to="/signin"/>} />
+        <Route path="/transactions" element={<Transactions/>} />
       </Routes>
     </BrowserRouter>
   );

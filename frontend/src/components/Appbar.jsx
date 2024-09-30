@@ -5,6 +5,7 @@ export const Appbar = () => {
 
     const handleLogout = () => {
         localStorage.removeItem("token"); // Remove the token from local storage
+        localStorage.removeItem("userId")
         navigate("/signin"); // Redirect to the sign-in page
     };
     const handleUpdate = ()=>{
@@ -15,6 +16,9 @@ export const Appbar = () => {
         else{
             navigate("/signin")
         }
+    }
+    const handleTransactions = ()=>{
+        navigate('/transactions')
     }
     return (
         <div className="shadow h-14 flex justify-between">
@@ -30,6 +34,11 @@ export const Appbar = () => {
                         U
                     </div>
                 </div>
+                <button 
+                    onClick={handleTransactions} 
+                    className="self-center bg-green-500 text-white px-4 py-1 mr-2 rounded-md">
+                    Transactions
+                </button>
                 <button 
                     onClick={handleLogout} 
                     className="self-center bg-red-700 text-white px-4 py-1 mr-2 rounded-md">

@@ -6,6 +6,8 @@ import { InputBox } from "../components/InputBox"
 import { SubHeading } from "../components/SubHeading"
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
+import { jwtDecode } from "jwt-decode";
+
 
 export const Signup = () => {
     const [firstName, setFirstName] = useState("");
@@ -40,6 +42,7 @@ export const Signup = () => {
               password
             });
             localStorage.setItem("token", response.data.token)
+            localStorage.setItem("userId",jwtDecode(response.data.token) )
             navigate("/dashboard")
           }} label={"Sign up"} />
         </div>

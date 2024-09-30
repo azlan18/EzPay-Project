@@ -5,6 +5,8 @@ import { InputBox } from "../components/InputBox";
 import { SubHeading } from "../components/SubHeading";
 import { useState } from 'react';
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
+
 import { useNavigate } from 'react-router-dom'; // To redirect after sign-in
 
 export const Signin = () => {
@@ -22,6 +24,7 @@ export const Signin = () => {
 
             // Save the token (if needed) and redirect
             localStorage.setItem("token", response.data.token);
+            localStorage.setItem("userId",jwtDecode(response.data.token).userId )
             navigate("/dashboard"); // Redirect to the dashboard or wherever
         } catch (err) {
             const errorMessage = err.response?.data?.message || "Sign in failed. Please try again.";
